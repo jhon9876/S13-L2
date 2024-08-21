@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="gestioneEventi">
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestioneeventi"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+
+        <!--
+        questo file permette di effettuare la comunicazione con il server e in particolar modo:
+        1) gestioneEventi è il nome che associamo all'unità di persistenza e che poi, nella creazione dell'entityManagerFactory nel main, sarà l'argomento
+        da mettere tra le parentesi.
+        2) Nella prima proprietà persistence viene messa la porta aperta per la comunicazione con il server (impostabile da pgAdmin) e il nome del server creato
+        su pgAdmin
+        3)nella terza proprietà persistence ossia quella in cui vi è da immettere la password, il valore sarà dato dalla password di accesso al database
+        (in questo caso 1234)
+        4)Nell'ultima proprietà hibernate, viene specificato il tipo di operazione da svolgere quando vengono effettuate delle comunicazioni con il server e,
+        in particolar modo, è possibile avere un valore update che identifica che se vi sono aggiornamenti, essi verranno riportati nel database, o anche
+        create-drop che cancella tutto lo schema del database e ricrea tutto da capo.
+
+        -->
